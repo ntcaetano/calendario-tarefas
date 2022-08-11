@@ -4,6 +4,7 @@ export default class Cliente {
     #descricao: string
     #dataTarefa: string
     #tempo: string
+    data: string
 
     constructor(
         titulo: string,

@@ -4,15 +4,15 @@ import Botao from "./Botao";
 import Cep from "./labels/Cep";
 import Contrato from "./labels/Contrato";
 import CpfCnpj from "./labels/CpfCnpj";
-import Nascimento from "./labels/Tempo";
-import Nome from "./labels/Descricao";
+import Nascimento from "./labels/Nascimento";
+import Nome from "./labels/Nome";
 import Whatsapp from "./labels/Whatsapp";
 import Endereco from "./labels/Endereco";
 import Cidade from "./labels/Cidade";
-import Vencimento from "./labels/Data";
+import Vencimento from "./labels/Vencimento";
 import Negociacao from "./labels/Negociacao";
 import Vendedor from "./labels/Vendedor";
-import Mensagem from "./labels/Titulo";
+import Mensagem from "./labels/Mensagem";
 
 
 
