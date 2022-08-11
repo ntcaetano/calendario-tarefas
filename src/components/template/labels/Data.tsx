@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes} from "react"
 
 interface DataProps extends InputHTMLAttributes<HTMLInputElement>{
-    tipo: 'date'
+    tipo: 'datetime-local'
     texto: string
     valor: any
     somenteLeitura?: boolean
@@ -9,7 +9,7 @@ interface DataProps extends InputHTMLAttributes<HTMLInputElement>{
     valorMudou?: (valor: any) => void
 }
 
-export default function Data(props: DataProps) {
+export default function Vencimento(props: DataProps) {
 
     // const 
 
@@ -19,8 +19,9 @@ export default function Data(props: DataProps) {
                 {props.texto}
             </label>
             <input
-                type={props.tipo ?? 'date'}  
+                type={props.tipo ?? 'datetime-local'}  
                 value={props.valor}
+                min="2022-01-01T00:00" max="2022-12-01T00:00"
                 readOnly={props.somenteLeitura}
                 onChange={e => props.valorMudou?.(e.target.value)}
                 className={`

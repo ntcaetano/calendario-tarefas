@@ -3,20 +3,20 @@ import Formulario from "../components/template/Formulario";
 import Layout from "../components/template/Layout";
 import Tabela from "../components/template/Tabela";
 
-import useClientes from "../hooks/useClientes";
+import useTarefas from "../hooks/useTarefas";
 
 export default function Home() {
 
   const {
-    cliente,
-    clientes,
-    novoCliente,
-    salvarCliente,
-    selecionarCliente,
-    excluirCliente,
+    tarefa,
+    tarefas,
+    novaTarefa,
+    salvarTarefa,
+    selecionarTarefa,
+    excluirTarefa,
     tabelaVisivel,
     exibirTabela
-  } = useClientes()
+  } = useTarefas()
 
 
   return (
@@ -31,19 +31,19 @@ export default function Home() {
           <>
             <div className="flex justify-end">
               <Botao className="mb-4"
-                onClick={novoCliente}>
-                Novo Cliente
+                onClick={novaTarefa}>
+                Novo Tarefa
               </Botao>
             </div>
-            <Tabela clientes={clientes}
-              clienteSelecionado={selecionarCliente}
-              clienteExcluido={excluirCliente}
+            <Tabela tarefas={tarefas}
+              tarefaSelecionada={selecionarTarefa}
+              tarefaExcluida={excluirTarefa}
             />
           </>
         ) : (
           <Formulario
-            cliente={cliente}
-            clienteMudou={salvarCliente}
+            tarefa={tarefa}
+            tarefaMudou={salvarTarefa}
             cancelado={exibirTabela}
           />
         )}

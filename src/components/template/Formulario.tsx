@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Cliente from "../../core/Cliente";
+import Tarefa from "../../core/Tarefa";
 import Botao from "./Botao";
 import Descricao from "./labels/Descricao";
 import Data from "./labels/Data";
@@ -7,17 +7,17 @@ import Titulo from "./labels/Titulo";
 import Tempo from "./labels/Tempo";
 
 interface AlteraProps {
-    cliente: Cliente
-    clienteMudou?: (cliente: Cliente) => void
+    tarefa: Tarefa
+    tarefaMudou?: (tarefa: Tarefa) => void
     cancelado?: () => void
 }
 
 export default function Altera(props: AlteraProps) {
-    const id = props.cliente?.id
-    const [titulo, setTitulo] = useState(props.cliente?.titulo ?? '')
-    const [descricao, setDescricao] = useState(props.cliente?.descricao ?? '')
-    const [data, setData] = useState(props.cliente?.data ?? '')
-    const [tempo, setTempo] = useState(props.cliente?.tempo ?? '')
+    const id = props.tarefa?.id
+    const [titulo, setTitulo] = useState(props.tarefa?.titulo ?? '')
+    const [descricao, setDescricao] = useState(props.tarefa?.descricao ?? '')
+    const [data, setData] = useState(props.tarefa?.data ?? '')
+    const [tempo, setTempo] = useState(props.tarefa?.tempo ?? '')
 
     return (
         <div>
@@ -37,12 +37,12 @@ export default function Altera(props: AlteraProps) {
                 valorMudou={setTitulo}
                 className="mb-5"
             />
-            <Data
-                tipo="date"
+             <Data
                 texto="Data da tarefa"
                 valor={data}
                 valorMudou={setData}
                 className="mb-5"
+                tipo={"datetime-local"}
             />
             <Tempo
                 tipo="text"
@@ -63,8 +63,8 @@ export default function Altera(props: AlteraProps) {
 
             <div className="flex justify-end mt-7 cursor-pointer">
                 <Botao className="mr-2"
-                    onClick={() => props.clienteMudou?.(
-                        new Cliente(
+                    onClick={() => props.tarefaMudou?.(
+                        new Tarefa(
                             titulo,
                             descricao,
                             data,

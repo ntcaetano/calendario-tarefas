@@ -1,5 +1,3 @@
-import { useCallback } from "react"
-
 interface TituloProps {
     tipo: 'text' | 'number'
     texto: string

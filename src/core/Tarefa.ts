@@ -1,4 +1,4 @@
-export default class Cliente {
+export default class Tarefa {
     #id: string
     #titulo: string
     #descricao: string
@@ -21,7 +21,7 @@ export default class Cliente {
     }
 
     static vazio() {
-        return new Cliente('', '', '', '')
+        return new Tarefa('', '', '', '')
     }
 
     get id() {

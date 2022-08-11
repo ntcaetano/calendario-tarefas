@@ -33,7 +33,6 @@ export default function Autenticacao() {
 
         <div className="flex flex-col h-screen items-center justify-center">
             <div className="flex items-center justify-center w-20">
-                <img src="images/icons/favicon.png" alt="imagem" />
             </div>
             <div className="m-10 w-1/2 md:w-1/2 lg:w-1/3">
                 <h1 className={`text-3xl font-bold mb-5`}>
