@@ -58,9 +58,6 @@ export default function Altera(props: AlteraProps) {
                 valorMudou={setDescricao}
                 className="mb-5"          
             />
-
-
-
             <div className="flex justify-end mt-7 cursor-pointer">
                 <Botao className="mr-2"
                     onClick={() => props.tarefaMudou?.(

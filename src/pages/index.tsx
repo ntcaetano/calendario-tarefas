@@ -32,7 +32,7 @@ export default function Home() {
             <div className="flex justify-end">
               <Botao className="mb-4"
                 onClick={novaTarefa}>
-                Novo Tarefa
+                Nova Tarefa
               </Botao>
             </div>
             <Tabela tarefas={tarefas}
