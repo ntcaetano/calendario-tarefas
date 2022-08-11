@@ -1,18 +1,10 @@
 import { useState } from "react";
 import Cliente from "../../core/Cliente";
 import Botao from "./Botao";
-import Cep from "./labels/Cep";
-import Contrato from "./labels/Contrato";
-import CpfCnpj from "./labels/CpfCnpj";
-import Nascimento from "./labels/Nascimento";
-import Nome from "./labels/Nome";
-import Whatsapp from "./labels/Whatsapp";
-import Endereco from "./labels/Endereco";
-import Cidade from "./labels/Cidade";
-import Vencimento from "./labels/Vencimento";
-import Negociacao from "./labels/Negociacao";
-import Vendedor from "./labels/Vendedor";
-import Mensagem from "./labels/Mensagem";
+import Nascimento from "./labels/Tempo";
+import Descricao from "./labels/Descricao";
+import Data from "./labels/./Data";
+import Titulo from "./labels/Titulo";
 
 interface AlteraProps {
     cliente: Cliente
@@ -22,23 +14,15 @@ interface AlteraProps {
 
 export default function Altera(props: AlteraProps) {
     const id = props.cliente?.id
-    const [nome, setNome] = useState(props.cliente?.nome ?? '')
-    const [cpfCnpj, setCpfCnpj] = useState(props.cliente?.cpfCnpj ?? '')
-    const [dataNasc, setDataNasc] = useState(props.cliente?.dataNasc ?? '')
-    const [whatsApp, setWhatsApp] = useState(props.cliente?.whatsApp ?? '')
-    const [contrato, setContrato] = useState(props.cliente?.contrato ?? '')
-    const [cep, setCep] = useState(props.cliente?.cep ?? '')
-    const [endereco, setEndereco] = useState(props.cliente?.endereco ?? '')
-    const [cidade, setCidade] = useState(props.cliente?.cidade ?? '')
-    const [vencimento, setVencimento] = useState(props.cliente?.vencimento ?? '')
-    const [valorNeg, setValorNasc] = useState(props.cliente?.valorNeg ?? 0)
-    const [vendedor, setVendedor] = useState(props.cliente?.vendedor ?? '')
-    const [mensagem, setMensagem] = useState(props.cliente?.mensagem ?? '')
+    const [titulo, setTitulo] = useState(props.cliente?.titulo ?? '')
+    const [descricao, setDescricao] = useState(props.cliente?.descricao ?? 0)
+    const [data, setData] = useState(props.cliente?.data ?? '')
+    const [tempo, setTempo] = useState(props.cliente?.tempo ?? '')
 
     return (
         <div>
             {id ? (
-                <Nome
+                <titulo
                     tipo="number"
                     somenteLeitura
                     texto="Código"
@@ -46,11 +30,11 @@ export default function Altera(props: AlteraProps) {
                     className="mb-5 hidden"
                 />
             ) : false}
-            <Nome
+            <titulo
                 tipo="text"
-                texto="Nome Completo"
-                valor={nome}
-                valorMudou={setNome}
+                texto="titulo Completo"
+                valor={titulo}
+                valorMudou={setTitulo}
                 className="mb-5"
             />
             <CpfCnpj
@@ -105,20 +89,20 @@ export default function Altera(props: AlteraProps) {
             />
             <Negociacao
                 texto="Valor da Negociação"
-                valor={valorNeg}
-                valorMudou={setValorNasc}
+                valor={descricao}
+                valorMudou={setDescricao}
                 className="mb-5"
             />
-            <Vendedor
-                texto="Vendedor"
-                valor={vendedor}
-                valorMudou={setVendedor}
+            <data
+                texto="data"
+                valor={data}
+                valorMudou={setData}
                 className="mb-5"
             />
-            <Mensagem
+            <tempo
                 texto="Observação"
-                valor={mensagem}
-                valorMudou={setMensagem}
+                valor={tempo}
+                valorMudou={setTempo}
                 className="mb-5"
             />
 
@@ -128,7 +112,7 @@ export default function Altera(props: AlteraProps) {
                 <Botao className="mr-2"
                     onClick={() => props.clienteMudou?.(
                         new Cliente(
-                            nome,
+                            titulo,
                             cpfCnpj,
                             dataNasc,
                             whatsApp,
@@ -137,9 +121,9 @@ export default function Altera(props: AlteraProps) {
                             endereco,
                             cidade,
                             vencimento,
-                            valorNeg,
-                            vendedor,
-                            mensagem,
+                            descricao,
+                            data,
+                            tempo,
                             id
                         ))}
                         >

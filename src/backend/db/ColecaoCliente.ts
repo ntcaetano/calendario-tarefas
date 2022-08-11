@@ -7,35 +7,19 @@ export default class ColecaoCliente implements ClienteRepositorio {
     #conversor = {
         toFirestore(cliente: Cliente) {
             return {
-                nome: cliente.nome,
-                cpfCnpj: cliente.cpfCnpj,
-                dataNasc: cliente.dataNasc,
-                whatsApp: cliente.whatsApp,
-                contrato: cliente.contrato,
-                cep: cliente.cep,
-                endereco: cliente.endereco,
-                cidade: cliente.cidade,
-                vencimento: cliente.vencimento,
-                valorNeg: cliente.valorNeg,
-                vendedor: cliente.vendedor,
-                mensagem: cliente.mensagem,
+                titulo: cliente.titulo,
+                descricao: cliente.descricao,
+                dataTarefa: cliente.dataTarefa,
+                tempo: cliente.tempo,
             }
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, options: firebase.firestore.SnapshotOptions): Cliente {
             const dados = snapshot.data(options)
             return new Cliente(
-                dados.nome,
-                dados.cpfCnpj, 
-                dados.dataNasc, 
-                dados.whatsApp, 
-                dados.contrato, 
-                dados.cep, 
-                dados.endereco,
-                dados.cidade,
-                dados.vencimento,
-                dados.valorNeg,
-                dados.vendedor,
-                dados.mensagem,
+                dados.titulo, 
+                dados.descricao,
+                dados.dataTarefa, 
+                dados.tempo, 
                 snapshot.id
             )}
     }
