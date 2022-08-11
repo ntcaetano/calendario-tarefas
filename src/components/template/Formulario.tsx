@@ -6,13 +6,13 @@ import Data from "./labels/Data";
 import Titulo from "./labels/Titulo";
 import Tempo from "./labels/Tempo";
 
-interface AlteraProps {
+interface FormularioProps {
     tarefa: Tarefa
     tarefaMudou?: (tarefa: Tarefa) => void
     cancelado?: () => void
 }
 
-export default function Altera(props: AlteraProps) {
+export default function Formulario(props: FormularioProps) {
     const id = props.tarefa?.id
     const [titulo, setTitulo] = useState(props.tarefa?.titulo ?? '')
     const [descricao, setDescricao] = useState(props.tarefa?.descricao ?? '')
@@ -21,15 +21,6 @@ export default function Altera(props: AlteraProps) {
 
     return (
         <div>
-            {id ? (
-                <Titulo
-                    tipo="number"
-                    somenteLeitura
-                    texto="Código"
-                    valor={id}
-                    className="mb-5 hidden"
-                />
-            ) : false}
             <Titulo
                 tipo="text"
                 texto="Título"
@@ -38,11 +29,11 @@ export default function Altera(props: AlteraProps) {
                 className="mb-5"
             />
              <Data
+                tipo="datetime-local"
                 texto="Data da tarefa"
                 valor={data}
                 valorMudou={setData}
                 className="mb-5"
-                tipo={"datetime-local"}
             />
             <Tempo
                 tipo="text"
@@ -52,7 +43,7 @@ export default function Altera(props: AlteraProps) {
                 className="mb-5"
             />
             <Descricao
-                tipo={"text"} 
+                tipo="text"
                 texto="Descrição"
                 valor={descricao}
                 valorMudou={setDescricao}

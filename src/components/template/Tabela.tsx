@@ -3,8 +3,8 @@ import { IconeEdicao, IconeLixo } from "./Icones"
 
 interface TabelaProps {
     tarefas: Tarefa[]
-    tarefaSelecionada?: (cliente: Tarefa) => void
-    tarefaExcluida?: (cliente: Tarefa) => void
+    tarefaSelecionada?: (tarefa: Tarefa) => void
+    tarefaExcluida?: (tarefa: Tarefa) => void
 }
 
 export default function Tabela(props: TabelaProps) {
@@ -13,8 +13,7 @@ export default function Tabela(props: TabelaProps) {
     
     function renderizarCabecalho() {
         return (
-            <tr>
-                <th className="text-left p-4">Código</th>
+            <tr>  
                 <th className="text-left p-4">Titulo</th>
                 <th className="text-left p-4">Data</th>
                 <th className="text-left p-4">Tempo</th>
@@ -25,26 +24,25 @@ export default function Tabela(props: TabelaProps) {
     }
 
     function renderizarDados() {
-        return props.tarefas?.map((cliente, i) => {
+        return props.tarefas?.map((tarefa, i) => {
             return (
-                <tr key={cliente.id}
+                <tr key={tarefa.id}
                     className={`${i % 2 === 0 ? 'bg-blue-300' : 'bg-blue-100'}`}>
-                    <td className="text-left p-4">{cliente.id}</td>
-                    <td className="text-left p-4">{cliente.titulo}</td>
-                    <td className="text-left p-4">{cliente.data}</td>
-                    <td className="text-left p-4">{cliente.tempo}</td>
-                    <td className="text-left p-4">{cliente.descricao}</td>
-                    {exibirAcoes ? rederizarAcoes(cliente) : false}
+                    <td className="text-left p-4">{tarefa.titulo}</td>
+                    <td className="text-left p-4">{tarefa.data}</td>
+                    <td className="text-left p-4">{tarefa.tempo}</td>
+                    <td className="text-left p-4">{tarefa.descricao}</td>
+                    {exibirAcoes ? rederizarAcoes(tarefa) : false}
                 </tr>
             )
         })
     }
 
-    function rederizarAcoes(cliente: Tarefa) {
+    function rederizarAcoes(tarefa: Tarefa) {
         return (
             <td className="flex justify-center">
                 {props.tarefaSelecionada ? (
-                    <button onClick={() => props.tarefaSelecionada?.(cliente)} className={`
+                    <button onClick={() => props.tarefaSelecionada?.(tarefa)} className={`
                         flex justify-center items-center
                         text-green-600 rounded-full p-2 m-1
                         hover:bg-blue-50
@@ -53,7 +51,7 @@ export default function Tabela(props: TabelaProps) {
                     </button>
                 ) : false}
                 {props.tarefaExcluida ? (
-                    <button onClick={() => props.tarefaExcluida?.(cliente)} className={`
+                    <button onClick={() => props.tarefaExcluida?.(tarefa)} className={`
                         flex justify-center items-center
                         text-red-500 rounded-full p-2 m-1
                         hover:bg-blue-50

@@ -30,9 +30,13 @@ export default function Home() {
         {tabelaVisivel ? (
           <>
             <div className="flex justify-end">
-              <Botao className="mb-4"
+              <Botao className={`
+              font-black text-1xl
+              text-gray-100
+              mb-4
+              `}
                 onClick={novaTarefa}>
-                Nova Tarefa
+                Adicionar Tarefa
               </Botao>
             </div>
             <Tabela tarefas={tarefas}
