@@ -1,12 +1,12 @@
 import MenuLateral from './MenuLateral'
 
-interface TituloProps {
+interface TituloMenuProps {
     children?: any
     titulo: string
 }
 
 
-export default function Titulo(props: TituloProps) {
+export default function Titulo(props: TituloMenuProps) {
 
     return (
         <div className="flex flex-col justify-center">

@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes} from "react"
 
-interface VencimentoProps extends InputHTMLAttributes<HTMLInputElement>{
+interface DataProps extends InputHTMLAttributes<HTMLInputElement>{
     tipo: 'date'
     texto: string
     valor: any
@@ -9,7 +9,7 @@ interface VencimentoProps extends InputHTMLAttributes<HTMLInputElement>{
     valorMudou?: (valor: any) => void
 }
 
-export default function Vencimento(props: VencimentoProps) {
+export default function Data(props: DataProps) {
 
     // const 
 

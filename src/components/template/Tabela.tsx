@@ -15,8 +15,8 @@ export default function Tabela(props: TabelaProps) {
         return (
             <tr>
                 <th className="text-left p-4">Código</th>
-                <th className="text-left p-4">Nome</th>
-                <th className="text-left p-4">Cpf/Cnpj</th>
+                <th className="text-left p-4">Titulo</th>
+                <th className="text-left p-4">Tempo</th>
                 {exibirAcoes ? <th className="p-4">Ações</th> : false}
             </tr>
         )
@@ -28,8 +28,8 @@ export default function Tabela(props: TabelaProps) {
                 <tr key={cliente.id}
                     className={`${i % 2 === 0 ? 'bg-blue-300' : 'bg-blue-100'}`}>
                     <td className="text-left p-4">{cliente.id}</td>
-                    <td className="text-left p-4">{cliente.nome}</td>
-                    <td className="text-left p-4">{cliente.cpfCnpj}</td>
+                    <td className="text-left p-4">{cliente.titulo}</td>
+                    <td className="text-left p-4">{cliente.tempo}</td>
                     {exibirAcoes ? rederizarAcoes(cliente) : false}
                 </tr>
             )

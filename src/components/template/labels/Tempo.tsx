@@ -1,5 +1,5 @@
-interface NascimentoProps {
-    tipo: 'date'
+interface TempoProps {
+    tipo: 'text'
     texto: string
     valor: any
     somenteLeitura?: boolean
@@ -7,14 +7,14 @@ interface NascimentoProps {
     valorMudou?: (valor: any) => void
 }
 
-export default function Nascimento(props: NascimentoProps) {
+export default function Tempo(props: TempoProps) {
     return (
         <div className={`flex flex-col ${props.className}`}>
             <label className="mb-2">
                 {props.texto}
             </label>
             <input
-                type={props.tipo ?? 'date'}
+                type={props.tipo ?? 'text'}
                 value={props.valor}
                 readOnly={props.somenteLeitura}
                 onChange={e => props.valorMudou?.(e.target.value)}

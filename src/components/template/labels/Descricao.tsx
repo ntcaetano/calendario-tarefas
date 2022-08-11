@@ -1,7 +1,7 @@
 import { useCallback } from "react"
 
-interface NomeProps {
-    tipo: 'text' | 'number'
+interface DescricaoProps {
+    tipo: 'text'
     texto: string
     valor: any
     somenteLeitura?: boolean
@@ -9,7 +9,7 @@ interface NomeProps {
     valorMudou?: (valor: any) => void
 }
 
-export default function Nome(props: NomeProps) {
+export default function Descricao(props: DescricaoProps) {
 
     return (
         <div className={`flex flex-col ${props.className}`}>
@@ -17,7 +17,7 @@ export default function Nome(props: NomeProps) {
                 {props.texto}
             </label>
             <input
-                placeholder="Digite seu nome completo"
+                placeholder="Digite aqui"
                 maxLength={50}
                 type={props.tipo ?? 'text'}
                 value={props.valor}

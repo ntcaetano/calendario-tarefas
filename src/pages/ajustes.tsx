@@ -1,3 +1,4 @@
+import Botao from "..//components/template/Botao";
 import Layout from "../components/template/Layout";
 import Tabela from "../components/template/Tabela";
 import Formulario from "../components/template/Formulario";
@@ -9,6 +10,7 @@ export default function Home() {
   const {
     cliente,
     clientes,
+    novoCliente,
     salvarCliente,
     selecionarCliente,
     excluirCliente,
@@ -22,9 +24,15 @@ export default function Home() {
       bg-gradient-to-r from-blue-600 to-blue-400
       text-white
     `}>
-      <Layout titulo="Tabela">
+      <Layout titulo="Tarefas do dia">
         {tabelaVisivel ? (
           <>
+            <div className="flex justify-end">
+              <Botao
+                onClick={novoCliente}>
+                Novo Cliente
+              </Botao>
+            </div>
             <Tabela clientes={clientes}
               clienteSelecionado={selecionarCliente}
               clienteExcluido={excluirCliente}
