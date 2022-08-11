@@ -32,7 +32,7 @@ export default function Altera(props: AlteraProps) {
             ) : false}
             <Titulo
                 tipo="text"
-                texto="titulo Completo"
+                texto="Título"
                 valor={titulo}
                 valorMudou={setTitulo}
                 className="mb-5"
@@ -44,19 +44,19 @@ export default function Altera(props: AlteraProps) {
                 valorMudou={setData}
                 className="mb-5"
             />
-            <Descricao
-                tipo={"text"} 
-                texto="Descricao da tarefa"
-                valor={descricao}
-                valorMudou={setDescricao}
-                className="mb-5"          
-            />
             <Tempo
                 tipo="text"
-                texto="Tempo da tarefa"
+                texto="Duração da tarefa"
                 valor={tempo}
                 valorMudou={setTempo}
                 className="mb-5"
+            />
+            <Descricao
+                tipo={"text"} 
+                texto="Descrição"
+                valor={descricao}
+                valorMudou={setDescricao}
+                className="mb-5"          
             />
 
 
@@ -72,7 +72,7 @@ export default function Altera(props: AlteraProps) {
                             id
                         ))}
                         >
-                    {id ? 'Alterar' : 'Enviar'}
+                    {id ? 'Alterar' : 'Salvar'}
                 </Botao>
                 <Botao onClick={props.cancelado}>
                     Cancelar
@@ -81,3 +81,6 @@ export default function Altera(props: AlteraProps) {
         </div>
     )
 }
+
+
+
