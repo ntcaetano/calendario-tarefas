@@ -16,7 +16,7 @@ export default function Nome(props: TituloProps) {
             </label>
             <input
                 placeholder="Digite aqui"
-                maxLength={20}
+                maxLength={50}
                 type={props.tipo ?? 'text'}
                 value={props.valor}
                 readOnly={props.somenteLeitura}
