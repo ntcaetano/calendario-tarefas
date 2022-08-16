@@ -14,9 +14,9 @@ export default function Tabela(props: TabelaProps) {
     function renderizarCabecalho() {
         return (
             <tr>  
-                <th className="text-left p-4">Titulo</th>
+                <th className="text-left p-4">Título</th>
                 <th className="text-left p-4">Data</th>
-                <th className="text-left p-4">Tempo</th>
+                <th className="text-left p-4">Duração</th>
                 <th className="text-left p-4">Descrição</th>
                 {exibirAcoes ? <th className="p-4">Ações</th> : false}
             </tr>

@@ -36,7 +36,7 @@ export default function Formulario(props: FormularioProps) {
                 className="mb-5"
             />
             <Tempo
-                tipo="text"
+                tipo="time"
                 texto="Duração da tarefa"
                 valor={tempo}
                 valorMudou={setTempo}

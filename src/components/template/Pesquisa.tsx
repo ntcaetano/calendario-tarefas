@@ -1,22 +1,32 @@
+import { useState } from "react";
+
 interface PesquisaProps {
     className?: string
 
 }
 
 export default function Pesquisa(props: PesquisaProps) {
-    const handleInputChange = (e) => {
-        e.preventeDefatult();
-        const {value} = e.target;
-        if(!value) return;
+    // const [data, setData] = useState([]);
+
+    // const handleInputChange = (e) => {
+    //     e.preventeDefatult();
+    //     const {value} = e.target;
+    //     if(!value) return;
         
-    };
+    //     const url = `link...`
+
+    //     fetch(url)
+    //         .then((response) => response.json())
+    //         .then(({data}) => setData(data));
+        
+    // };
 
     return(
         <div>
             <label htmlFor="search"></label>
             <input
             placeholder="Pesquise aqui"
-            onChange={handleInputChange}
+            //onChange={handleInputChange}
             className={`
                     w-full
                     border border-blue-500 rounded-lg

@@ -1,5 +1,5 @@
 interface TempoProps {
-    tipo: 'text'
+    tipo: 'time'
     texto: string
     valor: any
     somenteLeitura?: boolean
@@ -14,7 +14,7 @@ export default function Tempo(props: TempoProps) {
                 {props.texto}
             </label>
             <input
-                type={props.tipo ?? 'text'}
+                type={props.tipo ?? 'time'}
                 value={props.valor}
                 readOnly={props.somenteLeitura}
                 onChange={e => props.valorMudou?.(e.target.value)}
