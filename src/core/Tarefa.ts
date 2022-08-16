@@ -4,7 +4,7 @@ export default class Tarefa {
     #descricao: string
     #dataTarefa: string
     #tempo: string
-    data: string
+
 
     constructor(
         titulo: string,

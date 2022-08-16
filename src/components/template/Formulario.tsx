@@ -16,7 +16,7 @@ export default function Formulario(props: FormularioProps) {
     const id = props.tarefa?.id
     const [titulo, setTitulo] = useState(props.tarefa?.titulo ?? '')
     const [descricao, setDescricao] = useState(props.tarefa?.descricao ?? '')
-    const [data, setData] = useState(props.tarefa?.data ?? '')
+    const [data, setData] = useState(props.tarefa?.dataTarefa ?? '')
     const [tempo, setTempo] = useState(props.tarefa?.tempo ?? '')
 
     return (
