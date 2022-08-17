@@ -32,7 +32,8 @@ export default function Home() {
           <>
             <div className={`flex justify-between`}>
               <Pesquisa 
-              className={``}>
+              className={`|
+              `}>
               </Pesquisa>
               <Botao className={`
               font-black text-1xl

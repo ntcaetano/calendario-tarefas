@@ -9,10 +9,9 @@ export default function Pesquisa(props: PesquisaProps) {
         <div >
             <label htmlFor="search">
             <input
-            type="text"
+            type={'text'}
             placeholder="Pesquise aqui"
             // onChange={(e) => setSearch(e.target.value)}
-            value={'text'}
             className={`
                     w-80
                     border border-blue-500 rounded-lg
