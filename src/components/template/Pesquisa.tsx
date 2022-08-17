@@ -1,9 +1,6 @@
-import { Search } from "react-router-dom"
-
 interface PesquisaProps {
     className?: string
     children: any
-    valor: Search
 }
 
 export default function Pesquisa(props: PesquisaProps) {
@@ -15,7 +12,7 @@ export default function Pesquisa(props: PesquisaProps) {
             type="text"
             placeholder="Pesquise aqui"
             // onChange={(e) => setSearch(e.target.value)}
-            value={props.valor}
+            value={'text'}
             className={`
                     w-80
                     border border-blue-500 rounded-lg

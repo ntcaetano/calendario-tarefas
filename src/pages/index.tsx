@@ -31,8 +31,8 @@ export default function Home() {
         {tabelaVisivel ? (
           <>
             <div className={`flex justify-between`}>
-              <Pesquisa className={`
-              `}>
+              <Pesquisa 
+              className={``}>
               </Pesquisa>
               <Botao className={`
               font-black text-1xl
