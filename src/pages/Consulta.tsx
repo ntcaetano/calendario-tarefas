@@ -6,7 +6,7 @@ import Pesquisa from "../components/template/Pesquisa";
 
 import useTarefas from "../hooks/useTarefas";
 
-export default function Home() {
+export default function Consulta() {
 
   const {
     tarefa,
