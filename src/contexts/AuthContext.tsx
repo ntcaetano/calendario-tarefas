@@ -29,12 +29,12 @@ async function usuarioNormalizado(usuarioFirebase: firebase.User): Promise<Usuar
 
 function gerenciarCookie(logado: boolean) {
     if (logado) {
-        Cookies.set('calendario-tarefas-auth', "true", {
+        Cookies.set('bluecable-auth', "true", {
     expires: 7,
     secure: true,
 })
     } else {
-        Cookies.remove('calendario-tarefas-auth')
+        Cookies.remove('bluecable-auth')
     }
 }
 
@@ -58,7 +58,7 @@ export function AuthProvider(props) {
     }
 
     async function login(email, senha) {
-        // const cookie = "calendario-tarefas-auth; sameSite=none; secure";
+        // const cookie = "bluecable-auth; sameSite=none; secure";
         try {
             setCarregando(true)
             const resp = await firebase.auth()
@@ -110,7 +110,7 @@ export function AuthProvider(props) {
     }
 
     useEffect(() => {
-        if (Cookies.get('calendario-tarefas-auth')) {
+        if (Cookies.get('bluecable-auth')) {
             const cancelar = firebase.auth().onIdTokenChanged(configurarSessao)
             return () => cancelar()
         } else {
